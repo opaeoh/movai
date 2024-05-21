@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #222;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header h1 {
+    position: relative;
+}
+
+.header h1::after {
+    content: '🗿';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.square {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(75, 75, 75, 0.7);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.5s ease;
+}
+
+.square img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.square .content {
+    padding: 20px;
+    text-align: center;
+}
+
+.square h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.square p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.square .btn {
+    display: block;
+    padding: 10px 20px;
+    background-color: black; /* Default button color */
+    color: white; /* Default text color */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Added color transition */
+}
+
+.square .btn:hover {
+    background-color: white; /* Inverted button color on hover */
+    color: black; /* Inverted text color on hover */
+    transform: scale(1.1);
+}
+
+.square:hover {
+    animation: tilt 0.5s ease forwards;
+}
+
+.bottom-left-text,
+.bottom-right-text {
+    font-size: 14px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none; /* Remove underline */
+    border: 2px solid black; /* Initial black border */
+    color: black; /* Initial text color */
+    background-color: white; /* Initial background color */
+}
+
+.bottom-left-text:hover,
+.bottom-right-text:hover {
+    color: white; /* Text color on hover */
+    background-color: black; /* Fill with black color on hover */
+}
+
+@keyframes tilt {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(5deg) rotateY(5deg);
+    }
+}
